@@ -1,0 +1,8 @@
+{
+  "name": "Ahu & Lalu",
+  "description": "A refined digital wedding invitation for a traditional Kerala Hindu wedding featuring bilingual English and Malayalam readiness, interactive invitation reveal, ceremony schedule, and curated media galleries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", "Noto Serif Malayalam", Georgia, serif;
+  --font-sans: "Manrope", "Noto Sans Malayalam", system-ui, -apple-system, sans-serif;
+  --font-ml-serif: "Noto Serif Malayalam", "Cormorant Garamond", serif;
+  --font-ml-sans: "Noto Sans Malayalam", "Manrope", sans-serif;
+}
+
+:root {
+  --bg-ivory: #faf7f0;
+  --bg-cream: #f4efe6;
+  --bg-beige: #eae1d3;
+  --accent-rose: #a86b68;
+  --accent-sage: #5c6b57;
+  --accent-gold: #b68d40;
+  --accent-gold-soft: #d5b97d;
+  --ink-deep: #2c221e;
+  --ink-secondary: #5e4c45;
+  --ink-muted: #7a675f;
+  --hairline: rgba(44, 34, 30, 0.11);
+  --hairline-gold: rgba(182, 141, 64, 0.34);
+}
+
+html {
+  background-color: var(--bg-ivory);
+  color: var(--ink-deep);
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-ivory);
+  color: var(--ink-deep);
+  overflow-x: clip;
+  line-height: 1.65;
+}
+
+/* Malayalam typography optical calibration */
+html[lang="ml"] body {
+  font-family: var(--font-ml-sans);
+  line-height: 1.82;
+}
+
+html[lang="ml"] .font-display {
+  font-family: var(--font-ml-serif);
+  letter-spacing: 0;
+}
+
+/* Subtle Kerala Kasavu woven thread hairline */
+.kasavu-border-x {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(182, 141, 64, 0.55) 0px,
+    rgba(182, 141, 64, 0.55) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
+.kasavu-frame {
+  box-shadow:
+    inset 0 0 0 1px rgba(182, 141, 64, 0.32),
+    inset 0 0 0 5px rgba(250, 247, 240, 0.9),
+    inset 0 0 0 6px rgba(182, 141, 64, 0.22);
+}
+
+/* Subtle organic cotton paper texture without heavy noise */
+.paper-grain {
+  background-image: radial-gradient(rgba(44, 34, 30, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* 3D Perspective utilities for physical invitation doors and profile flip */
+.perspective-1600 {
+  perspective: 1600px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Subtle slow hero fallback drift */
+@keyframes kenBurnsSlow {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.06) translate3d(-0.6%, -0.4%, 0);
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsSlow 26s ease-in-out infinite;
+}
+
+/* Accessible focus outlines */
+:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-ken-burns {
+    animation: none;
+  }
+}
